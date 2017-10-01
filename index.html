@@ -7,6 +7,7 @@
   <link rel="stylesheet" type="text/css" href="css/reset.css">
   <link rel="stylesheet" type="text/css" href="css/common.css">
   <link rel="stylesheet" type="text/css" href="css/index.css">
+  <link rel="stylesheet" type="text/css" href="lunbo.css">
 </head>
 <body>
   <header>
@@ -51,121 +52,22 @@
   </nav>
   <main>
     <!-- carousel start -->
-    <div class="carousel" id="carousel">
-      <div class="m_unit" id="m_unit">
+    <div class="shuffling">
         <ul>
-          <li class="cur">
-            <a href="">
-              <img src="images/banner.png" alt="" />
-            </a>   
-            <div class="carousel-caption">
-              <p>作为你一个初级菜鸟，你是否想要了解</p>
-              <p><span>50万</span>年薪的程序员,都会哪些技能呢？</p>
-            </div>
-          </li>
-          <li>
-            <a href="">
-              <img src="images/banner.png" alt="" />
-            </a>
-
-            <div class="carousel-caption">
-              <p>作为你一个初级菜鸟，你是否想要了解</p>
-              <p><span>50万</span>年薪的程序员,都会哪些技能呢？</p>
-            </div>
-          </li>
-          <li>
-            <a href="">
-              <img src="images/banner.png" alt="" />
-            </a>
-            <div class="carousel-caption">
-              <p>作为你一个初级菜鸟，你是否想要了解</p>
-              <p><span>50万</span>年薪的程序员,都会哪些技能呢？</p>
-            </div>
-          </li>
+            <li class="banner-0">
+                <img src="image/image.png">
+            </li>
+            <li class="banner-1">
+                <img src="image/image.png">
+            </li>
+            <li class="banner-2">
+                <img src="image/image.png">
+            </li>
+            <li class="banner-3">
+                <img src="image/image.png">
+            </li>
         </ul>
-      </div>
-      <div class="btns">
-        <span class="leftBtn" id="leftBtn"></span>
-        <span class="rightBtn" id="rightBtn"></span>
-      </div>
-      <div class="circles" id="circles">
-        <ol>
-          <li class="cur"></li>
-          <li></li>
-          <li></li>
-        </ol>
-      </div>
     </div>
-    <script type="text/javascript" src="js/animate-2.0.1.js"></script>
-    <script type="text/javascript">
-      //获取元素
-      var carousel = document.getElementById("carousel");
-      var m_unit = document.getElementById("m_unit");
-      var leftBtn = document.getElementById("leftBtn");
-      var rightBtn = document.getElementById("rightBtn");
-      var oul = m_unit.getElementsByTagName("ul")[0];
-      var lis = oul.getElementsByTagName("li");
-      var circles = document.getElementById("circles").getElementsByTagName("li");
-  
-      var idx = 0;
-      for(var i = 0; i<lis.length; i++){
-        lis[i].style.width = carousel.offsetWidth + 'px';
-        lis[i].style.height = carousel.offsetHeight + 'px';
-        lis[i].style.left = carousel.offsetWidth + 'px';
-      }
-      lis[0].style.left = 0 + 'px';
-      rightBtn.onclick = function(){
-        if(lis[idx].isanimated) return;
-        animate(lis[idx],{"left":-carousel.offsetWidth},600);
-        idx++;
-        if(idx > 2){
-          idx = 0;
-        }
-        lis[idx].style.left = carousel.offsetWidth + "px";
-        animate(lis[idx],{"left":0},600);
-        changeCircles();
-      }
-      leftBtn.onclick = function(){
-        if(lis[idx].isanimated) return;
-        animate(lis[idx],{"left":carousel.offsetWidth},600);
-        idx--;
-        if(idx < 0){
-          idx = 2;
-        }
-        lis[idx].style.left = -carousel.offsetWidth + "px";
-        animate(lis[idx],{"left":0},600);
-        changeCircles();
-      }
-      for (var i = 0; i < circles.length; i++) {
-        circles[i].index = i;
-        circles[i].onclick = function(){
-          if(this.index < idx){
-            if(lis[idx].isanimated) return;
-            animate(lis[idx],{"left":560},600);
-            idx = this.index;
-            lis[idx].style.left = "-560px";
-            animate(lis[idx],{"left":0},600);
-          }else if(this.index > idx){
-            if(lis[idx].isanimated) return;
-            animate(lis[idx],{"left":-560},600);
-            idx = this.index;
-            lis[idx].style.left = "560px";
-            animate(lis[idx],{"left":0},600);
-          }else{
-            ;
-          }
-          changeCircles();
-        }
-      };
-      //根据信号量设置小圆点
-      function changeCircles(){
-        //排他
-        for (var i = 0; i < circles.length; i++) {
-          circles[i].className = "";
-        }
-        circles[idx].className = "cur";
-      }
-    </script>
     <!-- carousel end -->
     <div class="container-fluid">
       <div class="row feature">
@@ -271,24 +173,23 @@
       </div>
       <div class="row cooperation">
         <h3>战略合作企业</h3>
-        <div class="cowrap">
-          <div class="col-md-5ths">
-            <div class="ali"></div>
-          </div>
-          <div class="col-md-5ths">
-            <div class="king"></div>
-          </div>
-          <div class="col-md-5ths cur">
-            <div class="huan"></div>
-          </div>
-          <div class="col-md-5ths">
-            <div class="rong"></div>
-          </div>
-          <div class="col-md-5ths">
-            <div class="qiniu"></div>
-          </div>
+        <div class="coo-main" style="margin:0 15px 30px">
+            <div class="cooperation-0">
+                <div class="cooperation1"></div>
+            </div>
+            <div class="cooperation-0">
+                <div class="cooperation2"></div>
+            </div>
+            <div class="cooperation-0">
+                <div class="cooperation3"></div>
+            </div>
+            <div class="cooperation-0">
+                <div class="cooperation4"></div>
+            </div>
+            <div class="cooperation-0">
+                <div class="cooperation5"></div>
+            </div>
         </div>
-      </div>
     </div>
   </main>
   <div class="container-fluid link">
